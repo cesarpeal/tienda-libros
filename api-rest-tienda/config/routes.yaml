@@ -1,0 +1,129 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+
+register:
+    path: /register
+    controller: App\Controller\UserController::register
+    methods: [POST]
+
+login:
+    path: /login
+    controller: App\Controller\UserController::login
+    methods: [POST]
+
+user:
+    path: /user
+    controller: App\Controller\UserController::getIdentity
+    methods: [POST]
+
+edit_user:
+    path: /edit-user
+    controller: App\Controller\UserController::edit
+    methods: [POST]
+
+pedido:
+    path: /pedido/{idpedido}
+    controller: App\Controller\PedidoController::showOrder
+    methods: [GET]
+
+mostrar_pedidos:
+    path: /mis-pedidos
+    controller: App\Controller\PedidoController::myOrders
+    methods: [GET]
+
+pedido_add:
+    path: /pedido-add/{idLibro}
+    controller: App\Controller\PedidoController::add
+    methods: [POST]
+
+pedido_one_more_or_less:
+    path: /more-or-less
+    controller: App\Controller\PedidoController::moreOrless
+    methods: [POST]
+
+pedido_end:
+    path: /pedido/end
+    controller: App\Controller\PedidoController::endOrder
+    methods: [POST]
+
+pedido_editar:
+    path: /editar-pedido/{idlinea}
+    controller: App\Controller\PedidoController::editOrder
+    methods: [get]
+
+pedido_cancelar:
+    path: /cancelar-pedido/{idPedido}
+    controller: App\Controller\PedidoController::cancelOrder
+    methods: [DELETE]
+
+get_lineas:
+    path: /lineas/{idPedido}
+    controller: App\Controller\PedidoController::getLineasByPedido
+    methods: [GET]
+
+busqueda:
+    path: /busqueda/{search}
+    controller: App\Controller\LibroController::search
+    methods: [GET]
+
+review_crear:
+    path: /review-crear/{idLibro}
+    controller: App\Controller\ReviewController::create
+    methods: [POST]
+
+reviews:
+    path: /reviews/{idLibro}
+    controller: App\Controller\ReviewController::getBookReviews
+    methods: [GET]
+
+reviewed:
+    path: /reviewed
+    controller: App\Controller\ReviewController::reviewed
+    methods: [POST]
+
+libros_get:
+    path: /libros
+    controller: App\Controller\LibroController::getBooks
+    methods: [GET]
+
+ten_more_sold:
+    path: /more-sold
+    controller: App\Controller\LibroController::tenMoreSold
+    methods: [GET]
+
+libro_get:
+    path: /libro/{id}
+    controller: App\Controller\LibroController::getBook
+    methods: [GET]
+
+libro_media:
+    path: /libro-media/{idLibro}
+    controller: App\Controller\LibroController::getBookScore
+    methods: [GET]
+
+categorias:
+    path: /categorias
+    controller: App\Controller\LibroController::getCategorias
+    methods: [GET]
+
+libros_categoria:
+    path: /categoria/{categoria}
+    controller: App\Controller\LibroController::getBooksByCategory
+    methods: [GET]
+
+cien_mejores:
+    path: /cien-mejores
+    controller: App\Controller\LibroController::getHundredBest
+    methods: [GET]
+
+libro_crear:
+    path: /libro-crear
+    controller: App\Controller\LibroController::create
+    methods: [POST]
+
+libro_editar:
+    path: /libro-editar/{id}
+    controller: App\Controller\LibroController::edit
+    methods: [PUT]
